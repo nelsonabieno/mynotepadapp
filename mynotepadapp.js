@@ -27,8 +27,8 @@ class NotesApplication{
 	**lists out each of the notes list
 	*/
 	function listNotes() {
-		var note_id =this.notes.length;
-		for (var i=0; i<=mynotesarray){
+		var noteslength =this.notes.length;
+		for (var i=0; i<=noteslength;i++) {
 			
 		}
 		
