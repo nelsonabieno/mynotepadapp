@@ -54,14 +54,35 @@ class NotesApplication{
 	
 	/** search note
 	**@param: search_text
-	* return notesList
+	* return search results
 	*/
 	
 	function get(search_text) {
 		var searchresult = notesList.search(search_text); 	//searches the text
-		return searchresult; 						
+		
+		return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
+		 						
 	}
 	
+	
+	/** delete note
+	**@param: note_id
+	*
+	*/
+	
+	function delete(note_id) {
+		this.notes.splice(note_id, 1);		
+	}
+	
+	/** edit note
+	**@param: note_id, new_content
+	*
+	*/
+	
+	function edit(note_id,new_content) {
+		var old_content=this.notes[note_id];
+		this.notes.replace(old_content, new_content);		
+	}
 	
 	
 	
