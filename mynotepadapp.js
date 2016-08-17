@@ -14,7 +14,7 @@ class NotesApplication{
 	**@param: authorList,notesList
 	*/
 
-	constructor (authorList,notesList) {
+	constructor (author) {
 		this.author = itemList;
 		this.notes = notesList; 
 		
