@@ -26,7 +26,7 @@ class NotesApplication{
 	
 	function create (note_content) {
 		this.notes.push(note_content);	
-		
+	
 	}
 	
 	/**
@@ -34,10 +34,10 @@ class NotesApplication{
 	*/
 	function listNotes() {
 		var noteslength =this.notes.length;
-		for (var note_id=0; note_id<=note_id;i++) {
+		for (var note_id=0; note_id<=noteslength;i++) {
 			console.log("NOTE ID: "+note_id);
 			console.log(notes[note_id]);
-			console.log("By Author"+Author[])
+			console.log("By Author"+Author[note_id])
 		}
 		
 	}
