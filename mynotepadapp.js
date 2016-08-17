@@ -25,7 +25,7 @@ class NotesApplication{
 	*/
 	
 	function create (note_content) {
-		this.notes.push(note_content);	
+		notesList.push(note_content);	
 	
 	}
 	
@@ -41,6 +41,29 @@ class NotesApplication{
 		}
 		
 	}
+	
+	/** get note
+	**@param: note_id
+	* return notesList
+	*/
+	
+	function get(note_id) {
+		var currentNote=notesList[note_id].toString();
+		return currentNote; 							//returns note content as String
+	}
+	
+	/** search note
+	**@param: search_text
+	* return notesList
+	*/
+	
+	function get(search_text) {
+		var searchresult = notesList.search(search_text); 	//searches the text
+		return searchresult; 						
+	}
+	
+	
+	
 	
 
 }
