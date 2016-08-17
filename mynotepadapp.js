@@ -30,14 +30,14 @@ class NotesApplication{
 	}
 	
 	/**
-	**lists out each of the notes list
+	**lists out each of the Notes
 	*/
 	function listNotes() {
 		var noteslength =this.notes.length;
-		for (var note_id=0; note_id<=noteslength;i++) {
-			console.log("NOTE ID: "+note_id);
-			console.log(notes[note_id]);
-			console.log("By Author"+Author[note_id])
+		for (var note_id=0; note_id<noteslength;note_id++) {
+			console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
+			console.log(notes[note_id]+"\n"); 				//prints out the note content
+			console.log("By Author "+author[note_id]+"\n"); //prints out the author
 		}
 		
 	}
