@@ -10,7 +10,7 @@ class NotesApplication {
 	*/
 
 	constructor (author) {
-		this.author = [];
+		this.author = author;
 		this.notes = []; 
 	}
 	
