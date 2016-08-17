@@ -9,7 +9,7 @@ class NotesApplication{
 	*/
 	constructor () {
 		this.author = author; 
-		
+		this.notes=[]; 
 		
 	}
 	
