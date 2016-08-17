@@ -83,8 +83,5 @@ class NotesApplication{
 		var old_content=this.notes[note_id];
 		this.notes.replace(old_content, new_content);		
 	}
-	
-	
-	
 
 }
