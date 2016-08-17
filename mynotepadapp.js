@@ -4,19 +4,14 @@
 */
 
 class NotesApplication {
-	/** initialising class members
-	**
-	*/
-	let author=[];
-	let notes =[];
 
 	/** constructor
 	**@param: authorList,notesList
 	*/
 
 	constructor (author) {
-			this.author = itemList;
-			this.notes = notesList; 
+		this.author = [];
+		this.notes = []; 
 	}
 	
 	/** create note
@@ -24,20 +19,19 @@ class NotesApplication {
 	*/
 	
 	create (note_content) {
-			notesList.push(note_content);
-			console.log(err.Message);
+		this.notes.push(note_content);
 	}
 	
 	/**
 	**lists out each of the Notes
 	*/
 	listNotes () {
-			var noteslength =this.notes.length;
-			for (var note_id=0; note_id<noteslength;note_id++) {
+		var noteslength =this.notes.length;
+		for (var note_id=0; note_id<noteslength;note_id++) {
 				console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
-				console.log(notes[note_id]+"\n"); 				//prints out the note content
-				console.log("By Author "+author[note_id]+"\n"); //prints out the author
-			}	
+				console.log(this.notes[note_id]+"\n"); 				//prints out the note content
+				console.log("By Author "+this.author[note_id]+"\n"); //prints out the author
+		}	
 	}
 	
 	/** get note
@@ -46,8 +40,8 @@ class NotesApplication {
 	*/
 	
 	get (note_id) {
-			var currentNote=notesList[note_id].toString();
-			return currentNote; 							//returns note content as String
+		var currentNote=this.notes[note_id].toString();
+		return currentNote; 							//returns note content as String
 	}
 	
 	/** search note
@@ -56,8 +50,8 @@ class NotesApplication {
 	*/
 	
 	search (search_text) {
-			var searchresult = notesList.search(search_text); 	//searches the text
-			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
+		var searchresult = this.notes.search(search_text); 	//searches the text
+		return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notes+"\n"+"By Author"+this.author;
 	}
 	
 	
@@ -67,7 +61,7 @@ class NotesApplication {
 	*/
 	
 	delete (note_id) {
-			this.notes.splice(note_id, 1);	
+		this.notes.splice(note_id, 1);	
 	}
 	
 	/** edit note
@@ -76,8 +70,8 @@ class NotesApplication {
 	*/
 	
 	function edit(note_id,new_content) {
-			var old_content=this.notes[note_id];
-			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
+		var old_content=this.notes[note_id];
+		this.notes.replace(old_content, new_content);		//replaces the old content with the new content
 		}
 	}
 
