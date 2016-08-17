@@ -15,9 +15,8 @@ class NotesApplication {
 	*/
 
 	constructor (author) {
-		this.author = itemList;
-		this.notes = notesList; 
-		
+			this.author = itemList;
+			this.notes = notesList; 
 	}
 	
 	/** create note
@@ -25,32 +24,20 @@ class NotesApplication {
 	*/
 	
 	create (note_content) {
-		try{
 			notesList.push(note_content);
-		}
-		catch(err){
 			console.log(err.Message);
-		}
-		
-	
 	}
 	
 	/**
 	**lists out each of the Notes
 	*/
 	listNotes () {
-		try{
-				var noteslength =this.notes.length;
-				for (var note_id=0; note_id<noteslength;note_id++) {
-					console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
-					console.log(notes[note_id]+"\n"); 				//prints out the note content
-					console.log("By Author "+author[note_id]+"\n"); //prints out the author
-				}
-			}
-		catch(err){
-			console.log(err.Message);
-		}
-		
+			var noteslength =this.notes.length;
+			for (var note_id=0; note_id<noteslength;note_id++) {
+				console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
+				console.log(notes[note_id]+"\n"); 				//prints out the note content
+				console.log("By Author "+author[note_id]+"\n"); //prints out the author
+			}	
 	}
 	
 	/** get note
@@ -59,14 +46,8 @@ class NotesApplication {
 	*/
 	
 	get (note_id) {
-		try{
-				var currentNote=notesList[note_id].toString();
-				return currentNote; 							//returns note content as String
-		}
-		catch(err){
-				console.log(err.Message);
-		}
-		
+			var currentNote=notesList[note_id].toString();
+			return currentNote; 							//returns note content as String
 	}
 	
 	/** search note
@@ -75,14 +56,8 @@ class NotesApplication {
 	*/
 	
 	search (search_text) {
-		try{
 			var searchresult = notesList.search(search_text); 	//searches the text
 			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
-		}	
-		catch(err){
-			console.log(err.Message);
-		}
-		
 	}
 	
 	
@@ -92,13 +67,7 @@ class NotesApplication {
 	*/
 	
 	delete (note_id) {
-		try{
 			this.notes.splice(note_id, 1);	
-		}
-		catch(err){
-			console.log(err.Message);
-		}
-		
 	}
 	
 	/** edit note
@@ -106,15 +75,10 @@ class NotesApplication {
 	*
 	*/
 	
-	edit(note_id,new_content) {
-		try{
+	function edit(note_id,new_content) {
 			var old_content=this.notes[note_id];
 			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
 		}
-		catch(err){
-			console.log(err.Message);
-		}
-		
 	}
 
 }
