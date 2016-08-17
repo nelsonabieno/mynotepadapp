@@ -69,7 +69,7 @@ class NotesApplication {
 	*
 	*/
 	
-	function edit(note_id,new_content) {
+	edit(note_id,new_content) {
 		var old_content=this.notes[note_id];
 		this.notes.replace(old_content, new_content);		//replaces the old content with the new content
 		}
