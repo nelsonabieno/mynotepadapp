@@ -19,14 +19,14 @@ class NotesApplication{
 	*/
 	
 	function create (note_content) {
-		this.notes+=note_content;	
+		this.notes.push(note_content);	
 		
 	}
 	
 	/**
 	**lists out each of the notes list
 	*/
-	function listNotes() {
+	function listNotes(note_id) {
 		
 		
 	}
