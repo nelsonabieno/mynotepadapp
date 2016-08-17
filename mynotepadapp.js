@@ -4,9 +4,11 @@
 */
 
 class NotesApplication{
-	
-	constructor (){
-		
+	/**
+	**@param: author
+	*/
+	constructor () {
+		this.author = author; 
 		
 		
 	}
