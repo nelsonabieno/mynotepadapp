@@ -3,7 +3,7 @@
 **
 */
 
-class NotesApplication{
+class NotesApplication {
 	/** initialising class members
 	**
 	*/
@@ -25,7 +25,13 @@ class NotesApplication{
 	*/
 	
 	function create (note_content) {
-		notesList.push(note_content);	
+		try{
+			notesList.push(note_content);
+		}
+		catch(err){
+			console.log(err.Message);
+		}
+		
 	
 	}
 	
@@ -33,11 +39,16 @@ class NotesApplication{
 	**lists out each of the Notes
 	*/
 	function listNotes() {
-		var noteslength =this.notes.length;
-		for (var note_id=0; note_id<noteslength;note_id++) {
-			console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
-			console.log(notes[note_id]+"\n"); 				//prints out the note content
-			console.log("By Author "+author[note_id]+"\n"); //prints out the author
+		try{
+				var noteslength =this.notes.length;
+				for (var note_id=0; note_id<noteslength;note_id++) {
+					console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
+					console.log(notes[note_id]+"\n"); 				//prints out the note content
+					console.log("By Author "+author[note_id]+"\n"); //prints out the author
+				}
+			}
+		catch(err){
+			console.log(err.Message);
 		}
 		
 	}
@@ -48,8 +59,14 @@ class NotesApplication{
 	*/
 	
 	function get(note_id) {
-		var currentNote=notesList[note_id].toString();
-		return currentNote; 							//returns note content as String
+		try{
+				var currentNote=notesList[note_id].toString();
+				return currentNote; 							//returns note content as String
+		}
+		catch(err){
+				console.log(err.Message);
+		}
+		
 	}
 	
 	/** search note
@@ -58,10 +75,14 @@ class NotesApplication{
 	*/
 	
 	function get(search_text) {
-		var searchresult = notesList.search(search_text); 	//searches the text
+		try{
+			var searchresult = notesList.search(search_text); 	//searches the text
+			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
+		}	
+		catch(err){
+			console.log(err.Message);
+		}
 		
-		return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
-		 						
 	}
 	
 	
@@ -71,7 +92,13 @@ class NotesApplication{
 	*/
 	
 	function delete(note_id) {
-		this.notes.splice(note_id, 1);		
+		try{
+			this.notes.splice(note_id, 1);	
+		}
+		catch(err){
+			console.log(err.Message);
+		}
+		
 	}
 	
 	/** edit note
@@ -80,8 +107,14 @@ class NotesApplication{
 	*/
 	
 	function edit(note_id,new_content) {
-		var old_content=this.notes[note_id];
-		this.notes.replace(old_content, new_content);		
+		try{
+			var old_content=this.notes[note_id];
+			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
+		}
+		catch(err){
+			console.log(err.Message);
+		}
+		
 	}
 
 }
