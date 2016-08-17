@@ -24,7 +24,7 @@ class NotesApplication {
 	**@param: note_content
 	*/
 	
-	function create (note_content) {
+	create (note_content) {
 		try{
 			notesList.push(note_content);
 		}
@@ -38,7 +38,7 @@ class NotesApplication {
 	/**
 	**lists out each of the Notes
 	*/
-	function listNotes() {
+	listNotes () {
 		try{
 				var noteslength =this.notes.length;
 				for (var note_id=0; note_id<noteslength;note_id++) {
@@ -58,7 +58,7 @@ class NotesApplication {
 	* return notesList
 	*/
 	
-	function get(note_id) {
+	get (note_id) {
 		try{
 				var currentNote=notesList[note_id].toString();
 				return currentNote; 							//returns note content as String
@@ -74,7 +74,7 @@ class NotesApplication {
 	* return search results
 	*/
 	
-	function get(search_text) {
+	search (search_text) {
 		try{
 			var searchresult = notesList.search(search_text); 	//searches the text
 			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notesList+"\n"+"By Author"+this.author;
@@ -91,7 +91,7 @@ class NotesApplication {
 	*
 	*/
 	
-	function delete(note_id) {
+	delete (note_id) {
 		try{
 			this.notes.splice(note_id, 1);	
 		}
@@ -106,7 +106,7 @@ class NotesApplication {
 	*
 	*/
 	
-	function edit(note_id,new_content) {
+	edit(note_id,new_content) {
 		try{
 			var old_content=this.notes[note_id];
 			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
