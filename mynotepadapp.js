@@ -28,7 +28,7 @@ class NotesApplication{
 	*/
 	function listNotes() {
 		var noteslength =this.notes.length;
-		for (var i=0; i<=noteslength;i++) {
+		for (var note_id=0; note_id<=note_id;i++) {
 			
 		}
 		
