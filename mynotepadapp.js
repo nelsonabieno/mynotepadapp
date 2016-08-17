@@ -13,4 +13,10 @@ class NotesApplication{
 		
 	}
 	
+	function create (note_content) {
+		this.notes+=note_content;	
+		
+	}
+	
+
 }
