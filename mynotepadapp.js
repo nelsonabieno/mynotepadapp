@@ -4,13 +4,19 @@
 */
 
 class NotesApplication{
-	/** constructor
-	**@param: author,notes
+	/** initialising class members
+	**
 	*/
-	
-	constructor () {
-		this.author = author; 
-		this.notes=[]; 
+	let author=[];
+	let notes =[];
+
+	/** constructor
+	**@param: authorList,notesList
+	*/
+
+	constructor (authorList,notesList) {
+		this.author = itemList;
+		this.notes = notesList; 
 		
 	}
 	
@@ -29,7 +35,9 @@ class NotesApplication{
 	function listNotes() {
 		var noteslength =this.notes.length;
 		for (var note_id=0; note_id<=note_id;i++) {
-			
+			console.log("NOTE ID: "+note_id);
+			console.log(notes[note_id]);
+			console.log("By Author"+Author[])
 		}
 		
 	}
