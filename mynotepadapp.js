@@ -4,7 +4,7 @@
 */
 
 class NotesApplication{
-	/**
+	/** constructor
 	**@param: author,notes
 	*/
 	
@@ -14,7 +14,7 @@ class NotesApplication{
 		
 	}
 	
-	/**
+	/** create note
 	**@param: note_content
 	*/
 	
@@ -23,7 +23,10 @@ class NotesApplication{
 		
 	}
 	
-	function listNotes(){
+	/**
+	**lists out each of the notes list
+	*/
+	function listNotes() {
 		
 		
 	}
