@@ -4,11 +4,6 @@ var notes = new notesApplication("Nelson");
  		
 	describe ("A note taking application" ,function(){
 		
-	   it("CREATE FUNCTION: string input is valid for create function", function(){
-	   		
-	   		expect(notes.create("james")).to.equal("input are valid strings");
-	   });
-
 	   it("CREATE FUNCTION:Strings are only expected for create function", function(){
 	   		
 	   		expect(notes.create(5)).to.equal("note not saved bcos input wasnt a string");
@@ -32,5 +27,10 @@ var notes = new notesApplication("Nelson");
 	    it("EDIT FUNCTION: this function expects 2 parameters of type number and string respectively", function(){
 	   		
 	   		expect(notes.edit("this is an edited text",5)).to.equal("first parameter must be number and second paramter must be a string");
+	   });
+
+	    it("LIST NOTES FUNCTION: ListNotes function must have an array length > 0", function(){
+	   		
+	   		expect(notes.listNotes.noteslength.length(0)).to.equal("listNotes array must not be empty");
 	   });
 });

@@ -18,7 +18,7 @@ module.exports= function NotesApplication (author){
 	this.create=function (note_content) {
 		if (typeof notes_content === "string"){
 			this.notes.push(note_content);
-			return "input are valid strings";
+			//return "input are valid strings";
 		}
 		else{
 			return "note not saved bcos input wasnt a string";
@@ -31,10 +31,15 @@ module.exports= function NotesApplication (author){
 	*/
 	this.listNotes= function () {
 		var noteslength =this.notes.length;
-		for (var note_id=0; note_id<noteslength;note_id++) {
-				console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
-				console.log(this.notes[note_id]+"\n"); 				//prints out the note content
-				console.log("By Author "+this.author[note_id]+"\n"); //prints out the author
+		if (noteslength >= 0){
+				for (var note_id=0; note_id<noteslength;note_id++) {
+					console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
+					console.log(this.notes[note_id]+"\n"); 				//prints out the note content
+					console.log("By Author "+this.author[note_id]+"\n"); //prints out the author
+				}
+		}
+		else {
+			return "listNotes array must not be empty";
 		}	
 	}
 	
