@@ -29,7 +29,7 @@ var notes = new notesApplication("Nelson");
 	   		expect(notes.delete("noteid")).to.equal("string parameter are not valid to delete note");
 	   });
 	   
-	    it("EDIT FUNCTION: function expects only integer as parameter", function(){
+	    it("EDIT FUNCTION: this function expects 2 parameters of type number and string respectively", function(){
 	   		
 	   		expect(notes.edit("this is an edited text",5)).to.equal("first parameter must be number and second paramter must be a string");
 	   });

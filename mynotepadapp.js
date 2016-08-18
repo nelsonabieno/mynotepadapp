@@ -97,6 +97,4 @@ module.exports= function NotesApplication (author){
 			return "first parameter must be number and second paramter must be a string";
 		}
 	}
-	
-
-
+}
