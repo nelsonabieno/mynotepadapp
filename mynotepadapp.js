@@ -19,7 +19,6 @@ module.exports= function NotesApplication (author){
 		if (typeof notes_content === "string"){
 			this.notes.push(note_content);
 			return "input are valid strings";
-
 		}
 		else{
 			return "note not saved bcos input wasnt a string";
@@ -99,7 +98,6 @@ module.exports= function NotesApplication (author){
 		else {
 			return "first parameter must be number and second paramter must be a string";
 		}
-	
 	}
 	
 
