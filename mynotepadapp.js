@@ -3,29 +3,35 @@
 **
 */
 
-class NotesApplication {
 
+module.exports= function NotesApplication (author){
 	/** constructor
 	**@param: authorList,notesList
 	*/
-
-	constructor (author) {
 		this.author = author;
 		this.notes = []; 
-	}
-	
+		
 	/** create note
 	**@param: note_content
 	*/
 	
-	create (note_content) {
-		this.notes.push(note_content);
+	this.create=function (note_content) {
+		if (typeof notes_content === "string"){
+			this.notes.push(note_content);
+			return "input are valid strings";
+
+		}
+		else{
+			return "note not saved bcos input wasnt a string";
+		}
+			
 	}
+		
 	
 	/**
 	**lists out each of the Notes
 	*/
-	listNotes () {
+	this.listNotes= function () {
 		var noteslength =this.notes.length;
 		for (var note_id=0; note_id<noteslength;note_id++) {
 				console.log("NOTE ID: "+note_id+"\n"); 			//prints out the note id
@@ -39,7 +45,7 @@ class NotesApplication {
 	* return notesList
 	*/
 	
-	get (note_id) {
+	this.get =function(note_id) {
 		var currentNote=this.notes[note_id].toString();
 		return currentNote; 							//returns note content as String
 	}
@@ -49,7 +55,7 @@ class NotesApplication {
 	* return search results
 	*/
 	
-	search (search_text) {
+	this.search=function(search_text) {
 		var searchresult = this.notes.search(search_text); 	//searches the text
 		return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notes+"\n"+"By Author"+this.author;
 	}
@@ -60,7 +66,7 @@ class NotesApplication {
 	*
 	*/
 	
-	delete (note_id) {
+	this.delete =function(note_id) {
 		this.notes.splice(note_id, 1);	
 	}
 	
@@ -69,8 +75,12 @@ class NotesApplication {
 	*
 	*/
 	
-	edit(note_id,new_content) {
+	this.edit=function(note_id,new_content) {
 		var old_content=this.notes[note_id];
 		this.notes.replace(old_content, new_content);		//replaces the old content with the new content
 		}
-}
+	
+	}
+	
+
+
