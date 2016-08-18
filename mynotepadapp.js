@@ -1,4 +1,4 @@
-﻿/* A program to implement a note taking application
+﻿/* A program to implement a note taking application using javascript ES5 standard
 **
 **
 */
@@ -6,7 +6,7 @@
 
 module.exports= function NotesApplication (author){
 	/** constructor
-	**@param: authorList,notesList
+	**@param: author
 	*/
 		this.author = author;
 		this.notes = []; 
@@ -22,8 +22,7 @@ module.exports= function NotesApplication (author){
 		}
 		else{
 			return "note not saved bcos input wasnt a string";
-		}
-			
+		}		
 	}
 		
 	
@@ -45,7 +44,6 @@ module.exports= function NotesApplication (author){
 	*/
 	
 	this.get =function(note_id) {
-		
 		if (typeof note_id ==="number" ){
 			var currentNote=this.notes[note_id].toString();
 			return currentNote; 							//returns note content as String
@@ -94,7 +92,7 @@ module.exports= function NotesApplication (author){
 		if (typeof note_id === "string" && typeof new_content === "number") {
 			var old_content=this.notes[note_id];
 			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
-			}
+		}
 		else {
 			return "first parameter must be number and second paramter must be a string";
 		}
