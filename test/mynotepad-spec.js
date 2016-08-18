@@ -4,7 +4,6 @@ var notes = new notesApplication("Nelson");
  		
 	describe ("A note taking application" ,function(){
 		
-	 
 	   it("CREATE FUNCTION: string input is valid for create function", function(){
 	   		
 	   		expect(notes.create("james")).to.equal("input are valid strings");
@@ -34,6 +33,4 @@ var notes = new notesApplication("Nelson");
 	   		
 	   		expect(notes.edit("this is an edited text",5)).to.equal("first parameter must be number and second paramter must be a string");
 	   });
-	   
-
 });
