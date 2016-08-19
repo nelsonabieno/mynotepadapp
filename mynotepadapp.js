@@ -15,7 +15,7 @@ module.exports= function NotesApplication (author){
 	**@param: note_content
 	*/
 	
-	this.create=function (note_content) {
+	this.create = function (note_content) {
 		if (typeof notes_content === "string"){
 			this.notes.push(note_content);
 			//return "input are valid strings";
@@ -29,7 +29,7 @@ module.exports= function NotesApplication (author){
 	/**
 	**lists out each of the Notes
 	*/
-	this.listNotes= function () {
+	this.listNotes = function () {
 		var noteslength =this.notes.length;
 		if (noteslength >= 0){
 				for (var note_id=0; note_id<noteslength;note_id++) {
@@ -48,7 +48,7 @@ module.exports= function NotesApplication (author){
 	* return notesList
 	*/
 	
-	this.get =function(note_id) {
+	this.get = function(note_id) {
 		if (typeof note_id ==="number" ){
 			var currentNote=this.notes[note_id].toString();
 			return currentNote; 							//returns note content as String
@@ -63,7 +63,7 @@ module.exports= function NotesApplication (author){
 	* return search results
 	*/
 	
-	this.search=function(search_text) {
+	this.search = function(search_text) {
 		if (typeof search_text === "string"){
 			var searchresult = this.notes.indexOf(search_text); 	//searches the text
 			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notes+"\n"+"By Author"+this.author;
@@ -79,7 +79,7 @@ module.exports= function NotesApplication (author){
 	*
 	*/
 	
-	this.delete =function(note_id) {
+	this.delete = function(note_id) {
 		if (typeof note_id ==="number" ){
 			this.notes.splice(note_id, 1);	
 		}
@@ -90,10 +90,10 @@ module.exports= function NotesApplication (author){
 	
 	/** edit note
 	**@param: note_id, new_content
-	*
+	* 
 	*/
 	
-	this.edit=function(note_id,new_content) {
+	this.edit = function(note_id,new_content) {
 		if (typeof note_id === "number" && typeof new_content === "string") {
 			var old_content=this.notes[note_id];		
 			this.notes[note_id]=this.notes[new_content];   //replaces the old content with the new content
