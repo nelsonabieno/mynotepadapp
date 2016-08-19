@@ -65,10 +65,19 @@ module.exports= function NotesApplication (author){
 	
 	this.search = function(search_text) {
 		if (typeof search_text === "string"){
-			var searchresult = this.notes.indexOf(search_text); 	//searches the text
-			return "showing search results for " +search_text+ "\n NOTE ID :"+ this.note_id+"\n"+ this.notes+"\n"+"By Author"+this.author;
+			var searchResult=[];
+				for ( var i =0; i < this.notes.length; i++){
+					let splitItem= this.notes[0].split(' ');
+						if (splitItem[i].toString().includes(search_text)){                         
+							return "showing search results for [<" +search_text+ ">] \n NOTE ID :"+ splitItem[i]+"\n"+ this.notes+"\n"+"By Author"+this.author;
+							//searches the text and if found, the search result is returned
+						}
+						else {
+							return false;
+						}
+				}	
 		}
-		else{
+		else {
 			return "No result(s) found";
 		}
 	}
