@@ -28,9 +28,4 @@ var notes = new notesApplication("Nelson");
 	   		
 	   		expect(notes.edit("this is an edited text",5)).to.equal("first parameter must be number and second paramter must be a string");
 	   });
-
-	    it("LIST NOTES FUNCTION: ListNotes function must have an array length > 0", function(){
-	   		
-	   		expect(notes.listNotes.noteslength.length(0)).to.equal("listNotes array must not be empty");
-	   });
 });

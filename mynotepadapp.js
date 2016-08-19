@@ -94,9 +94,9 @@ module.exports= function NotesApplication (author){
 	*/
 	
 	this.edit=function(note_id,new_content) {
-		if (typeof note_id === "string" && typeof new_content === "number") {
-			var old_content=this.notes[note_id];
-			this.notes.replace(old_content, new_content);		//replaces the old content with the new content
+		if (typeof note_id === "number" && typeof new_content === "string") {
+			var old_content=this.notes[note_id];		
+			this.notes[note_id]=this.notes[new_content];   //replaces the old content with the new content
 		}
 		else {
 			return "first parameter must be number and second paramter must be a string";
